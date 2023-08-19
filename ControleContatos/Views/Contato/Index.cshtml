@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Listagem de Contatos";
+}
+<div class="text-center">
+    <div class="d-grid gap-2 d-md-flex justify-context-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="Add">Adicionar novo Contato</a>
+    </div>
+    <br />
+    <h1 class="display-4">Listagem de Contatos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Documento</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>Otto@gmail.com</td>
+                <td>11 951065156</td>
+                <td>32665874168</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary" asp-controller="Contato" asp-action="Update">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Contato" asp-action="DeleteConfirm">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>Jacob@gmail.com</td>
+                <td>11 9547123615</td>
+                <td>32138566998</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary">Editar</a>
+                        <a role="button" class="btn btn-danger">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>Brid</td>
+                <td>larry@gmail.com</td>
+                <td>11 63598792</td>
+                <td>616111619</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary">Editar</a>
+                        <a role="button" class="btn btn-danger">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
