@@ -1,4 +1,5 @@
 using ControleContatos.Data;
+using ControleContatos.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,8 @@ namespace ControleContatos
 
             services.AddEntityFrameworkSqlServer().
                 AddDbContext<ContatoContext>(c => c.UseSqlServer(Configuration.GetConnectionString("conexao")));
+            
+            services.AddScoped<IContatoRepository, ContatoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
