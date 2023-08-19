@@ -7,8 +7,12 @@ namespace ControleContatos.Repository
     {
         void Add(ContatoModel contato);
 
+        void Update(ContatoModel contato);
+
         bool SaveChanges();
 
         List<ContatoModel> GetAllContatos();
+
+        ContatoModel GetContato(int id);
     }
 }

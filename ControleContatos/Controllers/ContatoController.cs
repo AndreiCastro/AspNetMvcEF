@@ -22,9 +22,10 @@ namespace ControleContatos.Controllers
             return View();
         }
 
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
-            return View();
+            var contato = _repository.GetContato(id);
+            return View(contato);
         }
 
         public IActionResult DeleteConfirm()
@@ -33,13 +34,27 @@ namespace ControleContatos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(ContatoModel contato) 
+        public IActionResult Post(ContatoModel contato) 
         {
             _repository.Add(contato);
             if(_repository.SaveChanges())
                 return RedirectToAction("Index");
 
             return View("Erro");
+        }
+
+        [HttpPost]
+        public IActionResult Put(ContatoModel contato) 
+        {
+            var contatoDb = _repository.GetContato(contato.Id);
+            if(contatoDb != null)            
+                _repository.Update(contato);
+                    
+            if(_repository.SaveChanges())
+                return RedirectToAction("Index");
+            
+            return View("Erro");
+            
         }
     }
 }

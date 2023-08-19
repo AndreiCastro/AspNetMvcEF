@@ -23,9 +23,19 @@ namespace ControleContatos.Repository
             return _context.Contatos.AsNoTracking().OrderBy(c => c.Nome).ToList();
         }
 
+        public ContatoModel GetContato(int id)
+        {
+            return _context.Contatos.AsNoTracking().FirstOrDefault(c => c.Id == id);
+        }
+
         public bool SaveChanges()
         {
             return (_context.SaveChanges() > 0);
+        }
+
+        public void Update(ContatoModel contato)
+        {
+            _context.Update(contato);
         }
     }
 }
