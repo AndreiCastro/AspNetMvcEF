@@ -11,50 +11,73 @@ namespace ControleContatos.Controllers
         {
             _repository = repository;
         }
+        #region Index
         public IActionResult Index()
         {
             var contatos = _repository.GetAllContatos();
             return View(contatos);
         }
+        #endregion Index
 
+        #region Post
         public IActionResult Add()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Post(ContatoModel contato)
+        {
+            _repository.Add(contato);
+            if (_repository.SaveChanges())
+                return RedirectToAction("Index");
+
+            return BadRequest("Erro");
+        }
+        #endregion Post
+
+        #region Update
         public IActionResult Update(int id)
         {
             var contato = _repository.GetContato(id);
             return View(contato);
         }
 
-        public IActionResult DeleteConfirm()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult Post(ContatoModel contato) 
-        {
-            _repository.Add(contato);
-            if(_repository.SaveChanges())
-                return RedirectToAction("Index");
-
-            return View("Erro");
-        }
-
-        [HttpPost]
-        public IActionResult Put(ContatoModel contato) 
+        public IActionResult Put(ContatoModel contato)
         {
             var contatoDb = _repository.GetContato(contato.Id);
-            if(contatoDb != null)            
+            if (contatoDb != null)
                 _repository.Update(contato);
-                    
+
+            if (_repository.SaveChanges())
+                return RedirectToAction("Index");
+
+            return BadRequest("Erro");
+
+        }
+        #endregion Update
+
+        #region Delete
+        public IActionResult DeleteConfirm(int id)
+        {
+            var contato = _repository.GetContato(id);
+            return View(contato);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var contato = _repository.GetContato(id);
+            if (contato != null)
+                _repository.Delete(contato);
+
             if(_repository.SaveChanges())
                 return RedirectToAction("Index");
-            
-            return View("Erro");
-            
+
+            return BadRequest("Erro");
         }
+        #endregion Delete
+
+
     }
 }

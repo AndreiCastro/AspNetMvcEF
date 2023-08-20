@@ -11,6 +11,8 @@ namespace ControleContatos.Repository
 
         bool SaveChanges();
 
+        void Delete(ContatoModel contato);
+
         List<ContatoModel> GetAllContatos();
 
         ContatoModel GetContato(int id);

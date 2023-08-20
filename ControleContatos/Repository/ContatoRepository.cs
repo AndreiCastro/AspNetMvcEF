@@ -18,6 +18,11 @@ namespace ControleContatos.Repository
             _context.Add(contato);
         }
 
+        public void Delete(ContatoModel contato)
+        {
+            _context.Remove(contato);
+        }
+
         public List<ContatoModel> GetAllContatos()
         {
             return _context.Contatos.AsNoTracking().OrderBy(c => c.Nome).ToList();
