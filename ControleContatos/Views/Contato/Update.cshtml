@@ -13,22 +13,27 @@
     <div class="col-12">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" asp-for="Nome" placeholder="Insira nome">
+        @Html.ValidationMessageFor(x => x.Nome)
     </div>
     <div class="col-12">
         <label for="sobrenome" class="form-label">Sobrenome</label>
         <input type="text" class="form-control" asp-for="Sobrenome" placeholder="Insira sobrenome">
+        @Html.ValidationMessageFor(x => x.Sobrenome)
     </div>
     <div class="col-12">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" asp-for="Email" placeholder="Insira e-mail">
+        @Html.ValidationMessageFor(x => x.Email)
     </div>
     <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
         <input type="text" class="form-control" asp-for="Telefone" placeholder="Insira Telefone">
+        @Html.ValidationMessageFor(x => x.Telefone)
     </div>
     <div class="col-md-6">
         <label for="documento" class="form-label">Documento</label>
         <input type="number" class="form-control" asp-for="Documento" placeholder="Insira documento">
+        @Html.ValidationMessageFor(x => x.Documento)
     </div>
     <br />
     <br />

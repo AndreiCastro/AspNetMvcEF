@@ -28,11 +28,24 @@ namespace ControleContatos.Controllers
         [HttpPost]
         public IActionResult Post(ContatoModel contato)
         {
-            _repository.Add(contato);
-            if (_repository.SaveChanges())
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Add(contato);
+                    if (_repository.SaveChanges())
+                    {
+                        TempData["MensagemSucesso"] = "Contato cadastrado com sucesso!";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View("Add", contato);
+            }
+            catch (System.Exception)
+            {
+                TempData["MensagemErro"] = "Erro ao cadastrar contado!";
                 return RedirectToAction("Index");
-
-            return BadRequest("Erro");
+            }
         }
         #endregion Post
 
@@ -46,15 +59,27 @@ namespace ControleContatos.Controllers
         [HttpPost]
         public IActionResult Put(ContatoModel contato)
         {
-            var contatoDb = _repository.GetContato(contato.Id);
-            if (contatoDb != null)
-                _repository.Update(contato);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var contatoDb = _repository.GetContato(contato.Id);
+                    if (contatoDb != null)
+                        _repository.Update(contato);
 
-            if (_repository.SaveChanges())
+                    if (_repository.SaveChanges())
+                    {                        
+                        TempData["MensagemSucesso"] = "Contato alterado com sucesso!";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View("Update", contato);
+            }
+            catch (System.Exception)
+            {                
+                TempData["MensagemErro"] = "Erro ao alterar contato!";
                 return RedirectToAction("Index");
-
-            return BadRequest("Erro");
-
+            }
         }
         #endregion Update
 
@@ -67,14 +92,28 @@ namespace ControleContatos.Controllers
 
         public IActionResult Delete(int id)
         {
-            var contato = _repository.GetContato(id);
-            if (contato != null)
-                _repository.Delete(contato);
+            try
+            {
+                var contato = _repository.GetContato(id);
+                if (contato != null)
+                    _repository.Delete(contato);
 
-            if(_repository.SaveChanges())
+                if (_repository.SaveChanges())
+                {
+                    TempData["MensagemSucesso"] = "Contato excluído com sucesso!";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Erro ao excluído contato!";
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (System.Exception)
+            {
+                TempData["MensagemErro"] = "Erro ao excluído contato!";
                 return RedirectToAction("Index");
-
-            return BadRequest("Erro");
+            }
         }
         #endregion Delete
 
