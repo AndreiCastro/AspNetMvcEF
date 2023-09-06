@@ -6641,19 +6641,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "C:\\Users\\andrei\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andre\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
+      "projectUniqueName": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
       "projectName": "ControleContatos",
-      "projectPath": "C:\\Users\\andre\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andre\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\obj\\",
+      "projectPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
+      "packagesPath": "C:\\Users\\andrei\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andrei\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

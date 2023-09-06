@@ -7,7 +7,7 @@ namespace ControleContatos.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Digite o nome do contato")]
-        [Display(Name ="Teste")]
+        [Display(Name ="TestName")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Digite o sobrenome do contato")]
