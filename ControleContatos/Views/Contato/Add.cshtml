@@ -13,15 +13,15 @@
             </div>
 
             <form class="row g-3" asp-controller="Contato" asp-action="Post" method="post">
-                @*O asp-controller chama a controle para esse form, e o asp-action="Post" chama o metodo da controler *@
-                <div class="col-12">
+                @*O asp-controller chama a controle para esse form, e o asp-action="Post" chama o metodo da controler *@                
+                <div class="col-12" >
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" asp-for="Nome" placeholder="Insira nome">
                     @*O asp-for="atributoModel" server para referencia o campo com o atribuito da model *@
                     @Html.ValidationMessageFor(x => x.Nome)
                     @*O @Html.ValidationMessageFor serve para retornar a mensagem de erro na validações da model *@
-
                 </div>
+
                 <div class="col-12">
                     <label for="sobrenome" class="form-label">Sobrenome</label>
                     <input type="text" class="form-control" asp-for="Sobrenome" placeholder="Insira sobrenome">
@@ -29,8 +29,9 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" asp-for="Email" placeholder="Insira e-mail">
+                    <label for="email" class="form-label">@Html.DisplayNameFor(m => m.Email)</label>
+                    @* DisplayNameFor usa o valor que foi atribuido na Model. *@
+                    <input type="text" class="form-control" asp-for="Email" placeholder="Insira e-mail">
                     @Html.ValidationMessageFor(x => x.Email)
                 </div>
 

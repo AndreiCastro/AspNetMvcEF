@@ -10,8 +10,7 @@
             <div class="text-left">
                 @* <h3 class="display-4">Deseja realmente excluir o contato: <b>@Model.Nome</b> ?</h3> *@
                 <h3 class="display-4">Deseja realmente excluir o contato: <b>@Html.DisplayFor(m => m.Nome)</b> ?</h3>
-                @* Se usar o DisplayFor() pega o valor do atributo, se usar o DisplayNameFor usa o valor do DisplayName que foi
-                atribuido na Model. Se usar o DisplayFor(x => x.Nome) e @Model.Nome  é o mesmo resultado*@
+                @* Usar o DisplayFor(x => x.Nome) e @Model.Nome é o mesmo resultado*@
             </div>
             <br />
 
