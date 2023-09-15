@@ -3,14 +3,23 @@
 @{
     ViewData["Title"] = "Excluir Contato";
 }
-<div class="text-center">
-    @* <h3 class="display-4">Deseja realmente excluir o contato: <b>@Model.Nome</b> ?</h3> *@
-    <h3 class="display-4">Deseja realmente excluir o contato: <b>@Html.DisplayFor(m => m.Nome)</b> ?</h3>
-    @* Se usar o DisplayFor() pega o valor do atributo, se usar o DisplayNameFor usa o valor do DisplayName que foi 
-    atribuido na Model. Se usar o DisplayFor(x => x.Nome) e @Model.Nome  é o mesmo resultado*@
-</div>
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
 
-<form class="row g-3">
-    <a class="btn btn-primary" role="button" asp-route-id="@Model.Id" asp-controller="Contato" asp-action="Delete">Confirmar</a>
-    <a class="btn btn-danger" role="button" asp-controller="Contato" asp-action="Index">Voltar</a>
-</form>
+            <div class="text-left">
+                @* <h3 class="display-4">Deseja realmente excluir o contato: <b>@Model.Nome</b> ?</h3> *@
+                <h3 class="display-4">Deseja realmente excluir o contato: <b>@Html.DisplayFor(m => m.Nome)</b> ?</h3>
+                @* Se usar o DisplayFor() pega o valor do atributo, se usar o DisplayNameFor usa o valor do DisplayName que foi
+                atribuido na Model. Se usar o DisplayFor(x => x.Nome) e @Model.Nome  é o mesmo resultado*@
+            </div>
+            <br />
+
+            <form class="row g-3">
+                <a class="btn btn-primary" role="button" asp-route-id="@Model.Id" asp-controller="Contato" asp-action="Delete">Confirmar</a>
+                <a class="btn btn-danger" role="button" asp-controller="Contato" asp-action="Index">Voltar</a>
+            </form>
+
+        </div>
+    </div>
+</div>

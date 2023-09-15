@@ -4,46 +4,58 @@
 @{
     ViewData["Title"] = "Cadastro Contato";
 }
-<div class="text-center">    
-    <h1 class="display-4">Cadastrar Contato</h1>
-</div>
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-<form class="row g-3" asp-controller="Contato" asp-action="Post" method="post">
-    @*O asp-controller chama a controle para esse form, e o asp-action="Post" chama o metodo da controler *@
-    <div class="col-12">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" asp-for="Nome" placeholder="Insira nome">
-        @*O asp-for="atributoModel" server para referencia o campo com o atribuito da model *@
-        @Html.ValidationMessageFor(x => x.Nome)
-        @*O @Html.ValidationMessageFor serve para retornar a mensagem de erro na validações da model *@
-        
+            <div class="text-center">
+                <h1 class="display-4">Cadastrar Contato</h1>
+            </div>
+
+            <form class="row g-3" asp-controller="Contato" asp-action="Post" method="post">
+                @*O asp-controller chama a controle para esse form, e o asp-action="Post" chama o metodo da controler *@
+                <div class="col-12">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" asp-for="Nome" placeholder="Insira nome">
+                    @*O asp-for="atributoModel" server para referencia o campo com o atribuito da model *@
+                    @Html.ValidationMessageFor(x => x.Nome)
+                    @*O @Html.ValidationMessageFor serve para retornar a mensagem de erro na validações da model *@
+
+                </div>
+                <div class="col-12">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" asp-for="Sobrenome" placeholder="Insira sobrenome">
+                    @Html.ValidationMessageFor(x => x.Sobrenome)
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" asp-for="Email" placeholder="Insira e-mail">
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+
+                <div class="col-md-6">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="number" class="form-control" asp-for="Telefone" placeholder="Insira Telefone">
+                    @Html.ValidationMessageFor(x => x.Telefone)
+                </div>
+
+                <div class="col-md-6">
+                    <label for="documento" class="form-label">Documento</label>
+                    <input type="number" class="form-control" asp-for="Documento" placeholder="Insira documento">
+                    @Html.ValidationMessageFor(x => x.Documento)
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                    <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+
+        </div>
     </div>
-    <div class="col-12">
-        <label for="sobrenome" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" asp-for="Sobrenome" placeholder="Insira sobrenome">
-        @Html.ValidationMessageFor(x => x.Sobrenome)
-    </div>
-    <div class="col-12">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" asp-for="Email" placeholder="Insira e-mail">
-        @Html.ValidationMessageFor(x => x.Email)
-    </div>
-    <div class="col-md-6">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input type="number" class="form-control" asp-for="Telefone" placeholder="Insira Telefone">
-        @Html.ValidationMessageFor(x => x.Telefone) 
-    </div>
-    <div class="col-md-6">
-        <label for="documento" class="form-label">Documento</label>
-        <input type="number" class="form-control" asp-for="Documento" placeholder="Insira documento">
-        @Html.ValidationMessageFor(x => x.Documento)
-    </div>
-    <br />
-    <br />    
-    <br />
-    <br />
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-        <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index">Voltar</a>
-    </div>
-</form>
+</div>

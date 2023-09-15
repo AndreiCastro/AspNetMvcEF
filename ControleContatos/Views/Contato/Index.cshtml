@@ -3,65 +3,74 @@
 @{
     ViewData["Title"] = "Listagem de Contatos";
 }
-<div class="text-center">
-    <div class="d-grid gap-2 d-md-flex justify-context-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="Add">Adicionar novo Contato</a>
-    </div>
-    <br />
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
 
-    @if (TempData["MensagemSucesso"] != null)
-    {
-        <div class="alert alert-success" role="alert">
-            <button typr="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-            @TempData["MensagemSucesso"]
-        </div>
-    }
+            <div class="text-center">
+                <div class="d-grid gap-2 d-md-flex justify-context-md-start">
+                    <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="Add">Adicionar novo Contato</a>
+                </div>
+                <br />
+                <br />
 
-    @if (TempData["MensagemErro"] != null)
-    {
-        <div class="alert alert-danger" role="alert">
-            <button typr="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-            @TempData["MensagemErro"]
-        </div>
-    }
-    <br />
 
-    <h1 class="display-4">Listagem de Contatos</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Sobrenome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Documento</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (var contato in Model)
+                @if (TempData["MensagemSucesso"] != null)
                 {
-                    <tr>
-                        <th scope="row">@contato.Id</th>
-                        <td>@contato.Nome</td>
-                        <td>@contato.Sobrenome</td>
-                        <td>@contato.Email</td>
-                        <td>@contato.Telefone</td>
-                        <td>@contato.Documento</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a role="button" class="btn btn-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Update">Editar</a>
-                                @* @asp-route-id="" serve para trafegar por parametros o ID ao clicar no contato desejado *@
-                                <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="DeleteConfirm">Apagar</a>
-                            </div>
-                        </td>
-                    </tr>
+                    <div class="alert alert-success" role="alert">
+                        <button typr="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                        @TempData["MensagemSucesso"]
+                    </div>
                 }
-            }
-        </tbody>
-    </table>
+
+                @if (TempData["MensagemErro"] != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <button typr="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                        @TempData["MensagemErro"]
+                    </div>
+                }
+
+                <h1 class="display-4">Listagem de Contatos</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Documento</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var contato in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@contato.Id</th>
+                                    <td>@contato.Nome</td>
+                                    <td>@contato.Sobrenome</td>
+                                    <td>@contato.Email</td>
+                                    <td>@contato.Telefone</td>
+                                    <td>@contato.Documento</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a role="button" class="btn btn-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Update">Editar</a>
+                                            @* @asp-route-id="" serve para trafegar por parametros o ID ao clicar no contato desejado *@
+                                            <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="DeleteConfirm">Apagar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
 </div>

@@ -6646,11 +6646,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
+      "projectUniqueName": "C:\\Users\\andrei\\source\\repos\\MyProjects\\ContatosMvcEF\\ControleContatos\\ControleContatos.csproj",
       "projectName": "ControleContatos",
-      "projectPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\ControleContatos.csproj",
+      "projectPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\ContatosMvcEF\\ControleContatos\\ControleContatos.csproj",
       "packagesPath": "C:\\Users\\andrei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\AspNetMvcEF\\ControleContatos\\obj\\",
+      "outputPath": "C:\\Users\\andrei\\source\\repos\\MyProjects\\ContatosMvcEF\\ControleContatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andrei\\AppData\\Roaming\\NuGet\\NuGet.Config",
