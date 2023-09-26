@@ -1,2 +1,5 @@
-Projeto de estudo com MVC e EFCore (Entity Framework Core) - Code First
-Conexao com o banco está melhor neste projeto
+### Projeto de estudo com MVC 
+## .Net Core 5.0
+## EFCore (Entity Framework Core) - Code First
+
+
