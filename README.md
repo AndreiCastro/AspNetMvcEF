@@ -1,5 +1,5 @@
 <h1>Contatos</h1>
-<h2>Projeto de estudo com MVC </h2>
+<h3> Projeto de estudo com MVC</h3>
 <table>
   <tr>
     <td>Back-end</td>
