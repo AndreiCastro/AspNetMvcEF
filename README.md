@@ -1,5 +1,5 @@
 <h1>Contatos</h1>
-<h3> Projeto de estudo em MVC</h3>
+<h3> Projeto de estudo com CRUD de contatos em MVC</h3>
 <table>
   <tr>
     <td>Back-end</td>
