@@ -1,5 +1,14 @@
 <h3> Projeto de estudo com MVC </h3>
-<h4> .Net Core 5.0 </h4>
-<h4> EFCore (Entity Framework Core) - Code First </h4>
+<table>
+  <tr>
+    <td>Back-end</td>
+    <td>Front-end</td>
+  </tr>
+  <tr>
+    <td>Asp.Net Core 5.0 - com EFCore</td>
+    <td>Razor</td>
+  </tr>
+</table>
+
 
 
