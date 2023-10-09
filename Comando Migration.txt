@@ -1,0 +1,19 @@
+Após fazer os DbSet<> na classe Context rodar alguns comando no Packge Manager Console:
+
+Add-Migration (Nome da migration que deseja colocar) -Context ClassNameContext initial
+Serve para rodar o script que será gerado no DB. 
+É Add uma pasta no projeto com nome de Migration, nela tem o arquivo que será gerado com os detalhes dos campos. (Esse detalhes dos tamanhos, tipos se será not null, é tudo configurado na Model com os tipos dos atributos e DataAnnotation, e pode alterar eles antes de rodar o Update-database).
+PS: Pode colocar somente Add-Migration (NomeMigration) assim irá rodar todas as classes que herdam da DbContext. 
+       O initial só pra colocar um nome na migration q rodou, no caso essa é a 1º
+
+Update-DataBase -Context ClassNameContext
+PS: Se colocar only Update-DataBase executa todas migrations
+
+Remove-Migration
+Remove a última migration executada.
+
+Script-Migration 
+Script gerado quando rodou a migration
+
+Get-Help entityframework
+Commands list
