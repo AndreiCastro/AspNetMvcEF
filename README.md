@@ -1,5 +1,7 @@
 <h1>Contatos</h1>
 <h3> Projeto de estudo com CRUD de contatos em MVC</h3>
+<h4>* Arquivo Tips - Como instalar EF Core</h4>
+<h4>* Arquivo Comando Migration - Alguns comando de migration</h4>
 <table>
   <tr>
     <td>Back-end</td>
